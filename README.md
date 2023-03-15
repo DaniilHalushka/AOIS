@@ -1,2 +1,2 @@
 # AOIS
-This repository contains laboratory work on the subject of AOIS
+This repository contains laboratory works on the subject of AOIS
