@@ -1,4 +1,3 @@
-import static java.lang.Math.abs;
 
 public class CheckSigns {
     public static String[] checkAreBothSignsNegative(String binaryValue1, String binaryValue2) {

@@ -37,12 +37,12 @@ public class SumOfIntegerValues {
 
     public static String sumOfBinaryValues(String binaryValue1, String binaryValue2) {
         String[] checkedValues = CheckSigns.checkAreBothSignsNegative(binaryValue1, binaryValue2);
-        Object[] additedBinaries = HelpFunctions.additionToBinaryString(checkedValues[0], checkedValues[1]);
+        Object[] additedBinaries = UtilFunctions.additionToBinaryString(checkedValues[0], checkedValues[1]);
         String[] signs = CheckSigns.checkBothSigns((String) additedBinaries[0], (String) additedBinaries[1]);
         Object[] pair = comparisonForSum(signs[0], signs[1], '0');
         String result = (String) pair[0];
         if ((char) pair[1] == '1') {
-            additedBinaries = HelpFunctions.additionToBinaryString(result, "01");
+            additedBinaries = UtilFunctions.additionToBinaryString(result, "01");
             pair = comparisonForSum((String) additedBinaries[0], (String) additedBinaries[1], '0');
             result = (String) pair[0];
         }

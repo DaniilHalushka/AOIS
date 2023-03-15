@@ -77,7 +77,7 @@ public class OperationsWithFloatValues {
         String binaryValue1 = integerValue1 + floatValue1;
         String binaryValue2 = integerValue2 + floatValue2;
 
-        String result = HelpFunctionsForFloat.helpSum(binaryValue1, binaryValue2);
+        String result = UtilFunctionsForFloat.helpSum(binaryValue1, binaryValue2);
         result = result.substring(0, result.length() - pointPosition) + "." + result.substring(result.length() - pointPosition);
         return result;
     }
