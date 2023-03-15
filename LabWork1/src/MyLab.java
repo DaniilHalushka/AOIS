@@ -83,8 +83,7 @@ public class MyLab {
 
         System.out.println("\nThe first value in binary = " + OperationsWithFloatValues.floatToBinary(floatValue1) + ", the second value in binary = " +
                 OperationsWithFloatValues.floatToBinary(floatValue2));
-        System.out.println("Sum of float values as a floating point number = " + OperationsWithFloatValues.floatSum(floatValue1, floatValue2) + " or " +
-                (floatValue1 + floatValue2));
+        System.out.println("Sum of float values as a floating point number = " + OperationsWithFloatValues.floatSum(floatValue1, floatValue2) + " or " + (floatValue1 + floatValue2));
 
     }
 }

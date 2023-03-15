@@ -1,7 +1,7 @@
 public class DifferenceOfIntegerValues {
 
     public static String differenceOfBinaryValues(String binaryValue1, String binaryValue2) {
-        String result = "";
+        String result;
         UtilFunctions.additionToBinaryString(binaryValue1, binaryValue2);
         if (binaryValue1.equals(binaryValue2)) {
             return "0";

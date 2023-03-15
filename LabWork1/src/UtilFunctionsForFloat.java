@@ -1,18 +1,8 @@
 import static java.lang.Integer.parseInt;
-import static java.lang.Math.pow;
 
 public class UtilFunctionsForFloat {
     private static final int COUNT_OF_BYTES = 16;
     private static boolean HELP_BOOLEAN = false;
-
-    public static String helpView(String binaryView) {
-        StringBuilder binaryViewBuilder = new StringBuilder(binaryView);
-        while (binaryViewBuilder.length() < COUNT_OF_BYTES) {
-            binaryViewBuilder.insert(0, 0);
-        }
-        binaryView = binaryViewBuilder.toString();
-        return binaryView;
-    }
 
     public static char additionValues(char digit1, char digit2) {
         char result;
@@ -50,14 +40,4 @@ public class UtilFunctionsForFloat {
         HELP_BOOLEAN = false;
         return result.toString();
     }
-
-    public static float binaryValueToFloat(String binaryValue) {
-        float result = 0;
-        for (int i = 0; i < binaryValue.length(); i++) {
-            result = result + parseInt(String.valueOf(binaryValue.charAt(i))) * (float) pow(2, - (i + 1));
-        }
-        return result;
-    }
-
-
 }
