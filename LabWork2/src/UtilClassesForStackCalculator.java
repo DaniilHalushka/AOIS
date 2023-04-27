@@ -24,7 +24,7 @@ public class UtilClassesForStackCalculator {
         return charValue == OPERATOR_AND || charValue == OPERATOR_OR || charValue == OPERATOR_NOT;
     }
 
-    private static String extractFromStack(LinkedList<Character> stack) {
+    private static String extractFromLinkedList(LinkedList<Character> stack) {
         StringBuilder result = new StringBuilder();
         while (!stack.isEmpty()) {
             result.append(stack.pop());
@@ -62,7 +62,7 @@ public class UtilClassesForStackCalculator {
             }
             RPN.append(charValue);
         }
-        RPN.append(extractFromStack(stack));
+        RPN.append(extractFromLinkedList(stack));
         return RPN.toString();
     }
 }
