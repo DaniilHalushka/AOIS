@@ -1,4 +1,3 @@
-import java.util.Deque;
 import java.util.LinkedList;
 
 public class ParseExpression {
@@ -32,7 +31,7 @@ public class ParseExpression {
     public static boolean parseExpression(String expressionString, boolean[] booleanValues) {
         expressionString = UtilClassesForStackCalculator.buildReversePolishNotation(expressionString);
         expressionString = replaceVariablesInExpression(expressionString, booleanValues);
-        Deque<Boolean> RPNToBoolean = new LinkedList<>();
+        LinkedList<Boolean> RPNToBoolean = new LinkedList<>();
         int counter = 0;
         while (counter < expressionString.length()) {
             if (utilMethodForBinaryOperator(expressionString.charAt(counter))) {
