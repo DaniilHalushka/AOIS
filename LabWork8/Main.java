@@ -38,7 +38,8 @@ public class Main {
         }
         System.out.println("\n***********************************************\n");
         System.out.println("Sum of elements");
-        Map<Integer, int[]> arithmeticResults = associativeProcessor.arithmeticsLogic();
+        int[] maskForSum = new int[]{1, 0, 0};
+        Map<Integer, int[]> arithmeticResults = associativeProcessor.arithmeticsLogic(maskForSum);
         for (Map.Entry<Integer, int[]> entry : arithmeticResults.entrySet()) {
             System.out.println(entry.getKey() + ": " + Arrays.toString(entry.getValue()));
         }

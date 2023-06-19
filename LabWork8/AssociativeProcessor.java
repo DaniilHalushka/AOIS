@@ -70,10 +70,18 @@ public class AssociativeProcessor {
         return word;
     }
 
-    public Map<Integer, int[]> arithmeticsLogic() {
+    public Map<Integer, int[]> arithmeticsLogic(int[] enterValue) {
         List<int[]> results = new ArrayList<>();
-        int[][] listOfAllWords = obtainWord();
+        int[][] listOfAllWords = memoryTable;
+
+        List<int[]> suitableWords = new ArrayList<>();
         for (int[] word : listOfAllWords) {
+            if (Arrays.equals(Arrays.copyOfRange(word, 0, 3), enterValue)) {
+                suitableWords.add(word);
+            }
+        }
+
+        for (int[] word : suitableWords) {
             int[] A = Arrays.copyOfRange(word, 3, 7);
             int[] B = Arrays.copyOfRange(word, 7, 11);
             int[] sum = unionOfTheParts(A, B);
@@ -96,19 +104,22 @@ public class AssociativeProcessor {
         int[] result = new int[Math.max(firstElement.length, secondElement.length)];
         int utilElement = 0;
 
+        int resultIndex = result.length - 1;
         while (firstElement.length > 0 && secondElement.length > 0) {
             int firstDigit = firstElement[firstElement.length - 1];
             int secondDigit = secondElement[secondElement.length - 1];
             int utilResult = firstDigit ^ secondDigit ^ utilElement;
             utilElement = (firstDigit & secondDigit) | ((firstDigit ^ secondDigit) & utilElement);
-            result[result.length - 1] = utilResult;
+            result[resultIndex] = utilResult;
             firstElement = Arrays.copyOf(firstElement, firstElement.length - 1);
             secondElement = Arrays.copyOf(secondElement, secondElement.length - 1);
-            result = Arrays.copyOf(result, result.length - 1);
+            resultIndex--;
         }
 
         result = Arrays.copyOf(result, result.length + 1);
-        result[result.length - 1] = utilElement;
+        System.arraycopy(result, 0, result, 1, result.length - 1);
+        result[0] = utilElement;
+
 
         return result;
     }
